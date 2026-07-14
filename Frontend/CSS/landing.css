@@ -1,0 +1,215 @@
+/* ============================================================
+   LANDING PAGE STYLES
+   Scoped under page-specific classes (.hero, .menu-section, etc.)
+   so nothing here can collide with nav.css or dashboard.css.
+   ============================================================ */
+
+/* ---- Site header (marketing, not app nav) ---- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-4);
+  gap: var(--space-5);
+}
+.site-header__brand { display: flex; align-items: center; gap: var(--space-2); }
+.brand-mark {
+  width: 34px; height: 34px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--brand-honey), var(--brand-ember));
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.brand-word { font-weight: 600; font-size: var(--text-lg); }
+
+.site-header__links { display: none; gap: var(--space-6); }
+.site-header__links a { color: var(--color-text-muted); font-weight: 500; font-size: var(--text-sm); }
+.site-header__links a:hover { color: var(--color-primary); }
+
+.site-header__actions { display: none; align-items: center; gap: var(--space-3); }
+.theme-switch--pill { background: var(--color-bg-subtle); border-radius: var(--radius-full); padding: var(--space-1); }
+.theme-switch--pill button { padding: var(--space-2); border-radius: var(--radius-full); color: var(--color-text-muted); }
+
+.site-header__menu-toggle { display: block; color: var(--color-text); }
+
+@media (min-width: 900px) {
+  .site-header__links, .site-header__actions { display: flex; }
+  .site-header__menu-toggle { display: none; }
+}
+
+/* ---- Hero ---- */
+.hero { padding-block: var(--space-8) var(--space-8); overflow: hidden; }
+.hero__inner {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .hero__inner { grid-template-columns: 1.1fr 0.9fr; }
+}
+
+.hero__headline {
+  margin-top: var(--space-3);
+  font-size: var(--text-3xl);
+}
+.hero__headline em { color: var(--color-primary); font-style: normal; }
+
+.hero__sub {
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  max-width: 46ch;
+}
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+.hero__proof { margin-top: var(--space-5); font-size: var(--text-sm); color: var(--color-text-faint); }
+
+/* Signature hero visual: a "served" verse card with rising steam */
+.hero__visual { display: flex; justify-content: center; }
+.table-card {
+  position: relative;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-7) var(--space-6) var(--space-6);
+  max-width: 320px;
+  width: 100%;
+  /* Scalloped "plate rim" top edge, referencing the cuisine motif
+     without literal clip-art — a soft repeating radial mask. */
+  border-top: 6px solid transparent;
+  background-image:
+    radial-gradient(circle at 8px -4px, transparent 10px, var(--color-surface-raised) 11px),
+    linear-gradient(var(--color-surface-raised), var(--color-surface-raised));
+  background-size: 24px 100%, 100% 100%;
+  background-repeat: repeat-x, no-repeat;
+}
+.table-card--hero { transform: rotate(-1.5deg); }
+
+.table-card__verse {
+  margin-top: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+.table-card__tag {
+  margin-top: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+}
+
+/* Steam: three soft ribbons rising from the top of the card,
+   looping gently — an ambient signal of "freshly served today". */
+.steam {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+.steam span {
+  width: 6px; height: 34px;
+  border-radius: 999px;
+  background: linear-gradient(to top, var(--brand-honey), transparent);
+  opacity: 0.55;
+  animation: steam-rise 3.2s ease-in-out infinite;
+}
+.steam span:nth-child(2) { animation-delay: 0.5s; height: 40px; }
+.steam span:nth-child(3) { animation-delay: 1s; }
+@keyframes steam-rise {
+  0%   { transform: translateY(6px) scaleY(0.85); opacity: 0; }
+  30%  { opacity: 0.6; }
+  100% { transform: translateY(-16px) scaleY(1.1); opacity: 0; }
+}
+
+/* ---- Menu (signature) section ---- */
+.menu-section { padding-block: var(--space-8); }
+.menu-section__sub { text-align: center; max-width: 52ch; margin: var(--space-3) auto 0; }
+.menu-grid {
+  margin-top: var(--space-7);
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.menu-item { padding: var(--space-6); }
+.menu-item__course {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+.menu-item h3 { margin-top: var(--space-2); }
+.menu-item p { margin-top: var(--space-2); font-size: var(--text-sm); }
+
+/* ---- Life stages ---- */
+.stages-section { padding-block: var(--space-8); background: var(--color-bg-subtle); }
+.stages-grid {
+  margin-top: var(--space-7);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.stage-card {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+.stage-card__icon { font-size: 1.8rem; }
+.stage-card h4 { margin-top: var(--space-3); font-family: var(--font-display); }
+.stage-card p { margin-top: var(--space-2); font-size: var(--text-sm); }
+
+/* ---- CTA banner ---- */
+.cta-banner { padding-block: var(--space-8); }
+.cta-banner__inner {
+  text-align: center;
+  background: linear-gradient(135deg, var(--brand-ember), var(--brand-flame));
+  color: #FFFCF6;
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-5);
+}
+.cta-banner__inner h2 { color: #FFFCF6; }
+.cta-banner__inner p { color: rgba(255,252,246,0.85); margin-top: var(--space-2); }
+.cta-banner__inner .btn-primary {
+  margin-top: var(--space-5);
+  background: #FFFCF6;
+  color: var(--brand-ember);
+}
+.cta-banner__inner .btn-primary:hover { background: #FFF3DC; }
+
+/* ---- Footer ---- */
+.site-footer { padding-block: var(--space-7); border-top: 1px solid var(--color-border); }
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+@media (min-width: 700px) {
+  .site-footer__inner { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+}
+.site-footer__tagline { font-size: var(--text-sm); margin-top: var(--space-1); }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.site-footer nav a { font-size: var(--text-sm); color: var(--color-text-muted); }
+.site-footer nav a:hover { color: var(--color-primary); }
+.site-footer__copyright { font-size: var(--text-xs); color: var(--color-text-faint); }
+
+/* Bottom padding so floating mobile nav never covers footer content
+   on pages where the bottom bar is present (dashboard, etc.) */
+@media (max-width: 1023px) {
+  body[data-page] main { padding-bottom: var(--space-9); }
+}

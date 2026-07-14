@@ -1,0 +1,153 @@
+/* ============================================================
+   CHRISTIAN CUISINE — DESIGN TOKENS
+   "Feeding Your Soul Daily"
+   ------------------------------------------------------------
+   PURPOSE: Single source of truth for color, type, spacing and
+   motion across every page. Nothing in this file renders UI —
+   it only defines the vocabulary other stylesheets draw from.
+
+   THEME STRATEGY: We use CSS custom properties scoped to
+   [data-theme="light"] and [data-theme="dark"] on <html>.
+   JS (theme.js) toggles the attribute and persists the choice
+   in localStorage — no framework, no build step, just the
+   platform primitive the SRS asks for.
+
+   BRAND COLORS (fixed by product brief — do not alter hex
+   values without design sign-off):
+     --brand-ember   #EA6113  (primary — call to action, links)
+     --brand-flame   #F88F22  (secondary — hover, highlights)
+     --brand-honey   #FBB931  (accent — badges, streaks, gold accents)
+     --brand-cream   #FFE3B3  (base background, light mode)
+   ============================================================ */
+
+:root {
+  /* ---- Brand constants (theme-independent) ---- */
+  --brand-ember: #EA6113;
+  --brand-flame: #F88F22;
+  --brand-honey: #FBB931;
+  --brand-cream: #FFE3B3;
+
+  /* ---- Typography ----
+     Fraunces: a soft, warm variable serif for headlines —
+     chosen deliberately over a high-contrast "editorial" serif
+     so the brand reads nourishing rather than corporate.
+     Work Sans: humanist, highly legible at small sizes for
+     body copy and UI chrome. */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace; /* labels, streak counters */
+
+  /* Type scale — fluid, mobile-first (clamp avoids a JS resize listener) */
+  --text-xs: clamp(0.72rem, 0.7rem + 0.1vw, 0.8rem);
+  --text-sm: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --text-lg: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem);
+  --text-xl: clamp(1.5rem, 1.3rem + 0.8vw, 1.9rem);
+  --text-2xl: clamp(2rem, 1.7rem + 1.4vw, 2.8rem);
+  --text-3xl: clamp(2.6rem, 2.1rem + 2.4vw, 4rem);
+
+  /* Spacing scale (8px base grid) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 6rem;
+
+  /* Radii — soft, plate-like curves rather than sharp SaaS corners */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-full: 999px;
+
+  /* Elevation */
+  --shadow-sm: 0 2px 8px rgba(58, 36, 16, 0.08);
+  --shadow-md: 0 8px 24px rgba(58, 36, 16, 0.12);
+  --shadow-lg: 0 20px 48px rgba(58, 36, 16, 0.18);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 280ms;
+  --duration-slow: 480ms;
+
+  /* Layout */
+  --nav-sidebar-width: 88px;
+  --nav-sidebar-width-expanded: 240px;
+  --nav-bottom-height: 72px;
+  --content-max-width: 1200px;
+
+  /* Z-index scale */
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-toast: 300;
+}
+
+/* ==================== LIGHT THEME (default) ==================== */
+[data-theme="light"] {
+  --color-bg: var(--brand-cream);
+  --color-bg-subtle: #FFF3DC;
+  --color-surface: #FFFCF6;
+  --color-surface-raised: #FFFFFF;
+  --color-border: rgba(58, 36, 16, 0.12);
+  --color-border-strong: rgba(58, 36, 16, 0.22);
+
+  --color-text: #3A2410;
+  --color-text-muted: #8A6A45;
+  --color-text-faint: #B69567;
+  --color-text-on-brand: #FFFCF6;
+
+  --color-primary: var(--brand-ember);
+  --color-primary-hover: #D1560E;
+  --color-secondary: var(--brand-flame);
+  --color-accent: var(--brand-honey);
+
+  --color-success: #4C8B4A;
+  --color-danger: #C2452B;
+
+  --nav-bg: rgba(255, 252, 246, 0.92);
+  --nav-item-active-bg: var(--brand-ember);
+  --nav-item-active-text: #FFFCF6;
+  --nav-item-text: #8A6A45;
+}
+
+/* ==================== DARK THEME ==================== */
+[data-theme="dark"] {
+  --color-bg: #1B1108;
+  --color-bg-subtle: #241708;
+  --color-surface: #2A1B0D;
+  --color-surface-raised: #331F0F;
+  --color-border: rgba(255, 227, 179, 0.12);
+  --color-border-strong: rgba(255, 227, 179, 0.22);
+
+  --color-text: var(--brand-cream);
+  --color-text-muted: #C99A5C;
+  --color-text-faint: #8A6A45;
+  --color-text-on-brand: #1B1108;
+
+  --color-primary: var(--brand-flame);
+  --color-primary-hover: #FFA33F;
+  --color-secondary: var(--brand-honey);
+  --color-accent: var(--brand-ember);
+
+  --color-success: #6FB86C;
+  --color-danger: #E06A4C;
+
+  --nav-bg: rgba(27, 17, 8, 0.92);
+  --nav-item-active-bg: var(--brand-flame);
+  --nav-item-active-text: #1B1108;
+  --nav-item-text: #C99A5C;
+}
+
+/* Respect reduced-motion preference platform-wide */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

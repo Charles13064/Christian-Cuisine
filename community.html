@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Community — Christian Cuisine</title>
+<meta name="theme-color" content="#FFE3B3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="Frontend/css/tokens.css" />
+<link rel="stylesheet" href="Frontend/css/base.css" />
+<link rel="stylesheet" href="Frontend/css/nav.css" />
+<link rel="stylesheet" href="Frontend/css/app.css" />
+
+<script src="Frontend/js/theme.js"></script>
+</head>
+<body data-page="community">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div id="nav-root"></div>
+<script src="Frontend/js/nav-inject.js"></script>
+
+<div class="app-shell">
+  <main id="main" class="page">
+    <div class="container">
+
+<header class="page-header">
+  <div><p class="eyebrow">Shared Table</p><h1 class="page-header__title font-display">Community</h1></div>
+  <div class="page-header__actions"><button type="button" class="btn btn-primary">+ New Post</button></div>
+</header>
+
+<div class="grid-2" style="grid-template-columns:2fr 1fr;">
+  <section class="item-list">
+    <article class="card list-item">
+      <div class="list-item__avatar">A</div>
+      <div class="list-item__body">
+        <p class="list-item__title">Ann Johnson <span class="list-item__meta">· 2h ago</span></p>
+        <p class="list-item__text">Anyone else doing the Gospels in 30 Days plan? Day 12 and John's account of the woman at the well wrecked me today.</p>
+        <div style="display:flex;gap:var(--space-4);margin-top:var(--space-3);font-size:var(--text-xs);color:var(--color-text-faint);">
+          <span>❤ 14</span><span>💬 6 comments</span>
+        </div>
+      </div>
+    </article>
+    <article class="card list-item">
+      <div class="list-item__avatar">L</div>
+      <div class="list-item__body">
+        <p class="list-item__title">Larry Jones <span class="list-item__meta">· 5h ago</span></p>
+        <p class="list-item__text">Prayer request: my mom's surgery is Thursday. Would appreciate this community standing with our family.</p>
+        <div style="display:flex;gap:var(--space-4);margin-top:var(--space-3);font-size:var(--text-xs);color:var(--color-text-faint);">
+          <span>🙏 32 praying</span><span>💬 11 comments</span>
+        </div>
+      </div>
+    </article>
+    <article class="card list-item">
+      <div class="list-item__avatar">R</div>
+      <div class="list-item__body">
+        <p class="list-item__title">Robin Clark <span class="list-item__meta">· 1d ago</span></p>
+        <p class="list-item__text">Finished my 30-day goal on forgiveness today. Genuinely a different person than I was a month ago. Grateful.</p>
+        <div style="display:flex;gap:var(--space-4);margin-top:var(--space-3);font-size:var(--text-xs);color:var(--color-text-faint);">
+          <span>❤ 41</span><span>💬 9 comments</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <aside style="display:flex;flex-direction:column;gap:var(--space-5);">
+    <div class="card card-pad">
+      <p class="eyebrow">Your Small Groups</p>
+      <div class="item-list" style="margin-top:var(--space-3);">
+        <div class="list-item" style="padding:var(--space-2) 0;">
+          <div class="list-item__avatar" style="width:32px;height:32px;font-size:var(--text-xs);">Y</div>
+          <div class="list-item__body"><p class="list-item__title">Young Adults Bible Study</p><p class="list-item__meta">18 members</p></div>
+        </div>
+        <div class="list-item" style="padding:var(--space-2) 0;">
+          <div class="list-item__avatar" style="width:32px;height:32px;font-size:var(--text-xs);">M</div>
+          <div class="list-item__body"><p class="list-item__title">Men's Mentorship Circle</p><p class="list-item__meta">9 members</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="card card-pad">
+      <p class="eyebrow">This Week's Challenge</p>
+      <p style="margin-top:var(--space-3);font-size:var(--text-sm);">Memorize Psalm 46:10 and share how it's shaping your week.</p>
+    </div>
+  </aside>
+</div>
+
+    </div>
+  </main>
+</div>
+
+<script src="Frontend/js/nav.js"></script>
+
+</body>
+</html>

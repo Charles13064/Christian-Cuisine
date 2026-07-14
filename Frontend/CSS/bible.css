@@ -1,0 +1,92 @@
+/* ============================================================
+   BIBLE.CSS — Bible Reader & Search specific styles
+   ============================================================ */
+.bible-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+.bible-toolbar select {
+  width: auto;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+}
+.font-size-controls { display: flex; gap: var(--space-1); }
+.font-size-controls button {
+  width: 34px; height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-subtle);
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.reading-pane { line-height: 2; font-size: var(--text-lg); }
+.verse {
+  position: relative;
+  padding: var(--space-1) var(--space-8) var(--space-1) 0;
+  border-radius: var(--radius-sm);
+}
+.verse:hover { background: var(--color-bg-subtle); }
+.verse:hover .verse-actions { opacity: 1; }
+.verse-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-right: var(--space-2);
+  vertical-align: super;
+}
+.verse.is-highlighted { background: color-mix(in srgb, var(--brand-honey) 25%, transparent); }
+.verse-actions {
+  position: absolute;
+  right: 0; top: 4px;
+  display: flex;
+  gap: var(--space-1);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+.verse-actions button {
+  width: 26px; height: 26px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+.verse-actions button:hover { background: var(--color-surface-raised); color: var(--color-primary); }
+
+/* Search result item */
+.search-result {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+.search-result:last-child { border-bottom: none; }
+.search-result__ref { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-primary); font-weight: 700; }
+.search-result__text { margin-top: var(--space-2); font-family: var(--font-display); font-size: var(--text-base); }
+.search-result__text mark { background: color-mix(in srgb, var(--brand-honey) 45%, transparent); color: inherit; border-radius: 3px; padding: 0 2px; }
+
+/* Native accordion styling (details/summary) used for devotion
+   history, goal-plan days, FAQ, etc. — no extra JS required. */
+details.accordion-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+}
+details.accordion-item + details.accordion-item { margin-top: var(--space-3); }
+details.accordion-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+details.accordion-item summary::-webkit-details-marker { display: none; }
+details.accordion-item summary::after {
+  content: '+';
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+details.accordion-item[open] summary::after { content: '−'; }
+details.accordion-item .accordion-body { margin-top: var(--space-4); color: var(--color-text-muted); font-size: var(--text-sm); }

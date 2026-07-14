@@ -1,0 +1,38 @@
+/* ============================================================
+   ADMIN.CSS — Admin & Super Admin panel shell
+   ------------------------------------------------------------
+   Deliberately a SEPARATE shell from the member app (no
+   .nav-sidebar/.nav-bottombar) since admin staff are a distinct
+   audience with a flat, dense, data-oriented workflow rather
+   than the member's daily-devotional experience.
+   ============================================================ */
+.admin-topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+}
+.admin-topbar__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding-block: var(--space-4);
+  flex-wrap: wrap;
+}
+.admin-topbar__brand { display: flex; align-items: center; gap: var(--space-2); font-family: var(--font-display); font-weight: 600; }
+.admin-topbar__badge {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  background: var(--color-primary);
+  color: var(--color-text-on-brand);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+}
+.admin-topbar__nav { display: flex; gap: var(--space-4); flex-wrap: wrap; margin-left: auto; }
+.admin-topbar__nav a { font-size: var(--text-sm); color: var(--color-text-muted); font-weight: 500; }
+.admin-topbar__nav a.is-active, .admin-topbar__nav a:hover { color: var(--color-primary); }
+
+.admin-page { padding-block: var(--space-6) var(--space-9); }
+.admin-page .container { display: flex; flex-direction: column; gap: var(--space-6); max-width: 1280px; }

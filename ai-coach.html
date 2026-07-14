@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Spiritual Coach — Christian Cuisine</title>
+<meta name="theme-color" content="#FFE3B3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="Frontend/css/tokens.css" />
+<link rel="stylesheet" href="Frontend/css/base.css" />
+<link rel="stylesheet" href="Frontend/css/nav.css" />
+<link rel="stylesheet" href="Frontend/css/app.css" />
+<link rel="stylesheet" href="Frontend/css/chat.css" />
+<script src="Frontend/js/theme.js"></script>
+</head>
+<body data-page="ai-coach">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div id="nav-root"></div>
+<script src="Frontend/js/nav-inject.js"></script>
+
+<div class="app-shell">
+  <main id="main" class="page">
+    <div class="container">
+
+<header class="page-header">
+  <div><p class="eyebrow">AI Spiritual Coach</p><h1 class="page-header__title font-display">Ask, Reflect, Grow</h1></div>
+</header>
+
+<div class="card card-pad-lg chat-shell">
+  <div class="chat-suggestions">
+    <button type="button" class="chip-toggle">Explain John 3:16</button>
+    <button type="button" class="chip-toggle">Recommend a verse for anxiety</button>
+    <button type="button" class="chip-toggle">Build me a 7-day plan on forgiveness</button>
+  </div>
+
+  <div class="chat-thread">
+    <div class="chat-bubble chat-bubble--coach">
+      <span class="chat-bubble__label">Coach</span>
+      Peace be with you. I'm here to help you explore scripture, prepare for prayer, or think through a reading plan. What's on your heart today?
+    </div>
+    <div class="chat-bubble chat-bubble--user">
+      <span class="chat-bubble__label">You</span>
+      Can you explain what Romans 8:28 means?
+    </div>
+    <div class="chat-bubble chat-bubble--coach">
+      <span class="chat-bubble__label">Coach</span>
+      Romans 8:28 says God works all things together for good for those who love Him. It doesn't mean every event is good — it means God can weave even hard seasons into His good purpose for those trusting Him. Would you like a short devotion built around this verse?
+    </div>
+  </div>
+
+  <div class="chat-input-row">
+    <input type="text" placeholder="Ask a question or describe what you're going through..." aria-label="Message the AI Spiritual Coach" />
+    <button type="button" class="btn btn-primary">Send</button>
+  </div>
+  <p class="chat-disclaimer">The AI Spiritual Coach offers scripture-grounded guidance and is never a substitute for pastoral counsel.</p>
+</div>
+
+    </div>
+  </main>
+</div>
+
+<script src="js/nav.js"></script>
+
+</body>
+</html>

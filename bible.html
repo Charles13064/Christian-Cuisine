@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bible Reader — Christian Cuisine</title>
+<meta name="theme-color" content="#FFE3B3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="Frontend/css/tokens.css" />
+<link rel="stylesheet" href="Frontend/css/base.css" />
+<link rel="stylesheet" href="Frontend/css/nav.css" />
+<link rel="stylesheet" href="Frontend/css/app.css" />
+<link rel="stylesheet" href="Frontend/css/bible.css" />
+<script src="Frontend/js/theme.js"></script>
+</head>
+<body data-page="bible">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div id="nav-root"></div>
+<script src="Frontend/js/nav-inject.js"></script>
+
+<div class="app-shell">
+  <main id="main" class="page">
+    <div class="container">
+
+<header class="page-header">
+  <div>
+    <p class="eyebrow">Bible Reader</p>
+    <h1 class="page-header__title font-display">John 3</h1>
+  </div>
+</header>
+
+<div class="card card-pad bible-toolbar">
+  <select aria-label="Book"><option>John</option><option>Matthew</option><option>Psalms</option><option>Romans</option></select>
+  <select aria-label="Chapter"><option>Chapter 3</option><option>Chapter 4</option><option>Chapter 5</option></select>
+  <select aria-label="Bible Version"><option>KJV</option><option>NIV</option><option>ESV</option><option>NKJV</option></select>
+  <div class="font-size-controls" role="group" aria-label="Font size">
+    <button type="button" aria-label="Decrease font size">A-</button>
+    <button type="button" aria-label="Increase font size">A+</button>
+  </div>
+  <div style="margin-left:auto;display:flex;gap:var(--space-2);">
+    <button type="button" class="btn btn-ghost" style="padding:var(--space-2) var(--space-4);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16l7-4 7 4Z"/></svg>
+      Bookmark Chapter
+    </button>
+  </div>
+</div>
+
+<article class="card card-pad-lg reading-pane">
+  <p class="verse"><span class="verse-num">14</span>And as Moses lifted up the serpent in the wilderness, even so must the Son of Man be lifted up:
+    <span class="verse-actions"><button type="button" aria-label="Highlight verse">✎</button><button type="button" aria-label="Bookmark verse">☆</button><button type="button" aria-label="Add note">✚</button></span>
+  </p>
+  <p class="verse is-highlighted"><span class="verse-num">15</span>That whosoever believeth in him should not perish, but have eternal life.
+    <span class="verse-actions"><button type="button" aria-label="Highlight verse">✎</button><button type="button" aria-label="Bookmark verse">☆</button><button type="button" aria-label="Add note">✚</button></span>
+  </p>
+  <p class="verse"><span class="verse-num">16</span>For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.
+    <span class="verse-actions"><button type="button" aria-label="Highlight verse">✎</button><button type="button" aria-label="Bookmark verse">☆</button><button type="button" aria-label="Add note">✚</button></span>
+  </p>
+  <p class="verse"><span class="verse-num">17</span>For God sent not his Son into the world to condemn the world; but that the world through him might be saved.
+    <span class="verse-actions"><button type="button" aria-label="Highlight verse">✎</button><button type="button" aria-label="Bookmark verse">☆</button><button type="button" aria-label="Add note">✚</button></span>
+  </p>
+  <p class="verse"><span class="verse-num">18</span>He that believeth on him is not condemned: but he that believeth not is condemned already, because he hath not believed in the name of the only begotten Son of God.
+    <span class="verse-actions"><button type="button" aria-label="Highlight verse">✎</button><button type="button" aria-label="Bookmark verse">☆</button><button type="button" aria-label="Add note">✚</button></span>
+  </p>
+</article>
+
+    </div>
+  </main>
+</div>
+
+<script src="Frontend/js/nav.js"></script>
+
+</body>
+</html>

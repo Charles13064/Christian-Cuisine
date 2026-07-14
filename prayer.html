@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prayer Center — Christian Cuisine</title>
+<meta name="theme-color" content="#FFE3B3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="Frontend/css/tokens.css" />
+<link rel="stylesheet" href="Frontend/css/base.css" />
+<link rel="stylesheet" href="Frontend/css/nav.css" />
+<link rel="stylesheet" href="Frontend/css/app.css" />
+
+<script src="Frontend/js/theme.js"></script>
+</head>
+<body data-page="prayer">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div id="nav-root"></div>
+<script src="Frontend/js/nav-inject.js"></script>
+
+<div class="app-shell">
+  <main id="main" class="page">
+    <div class="container">
+
+<header class="page-header">
+  <div><p class="eyebrow">Prayer Center</p><h1 class="page-header__title font-display">Living Water</h1></div>
+  <div class="page-header__actions"><button type="button" class="btn btn-primary">+ New Prayer</button></div>
+</header>
+
+<div class="grid-2">
+  <section>
+    <div class="tabs" role="tablist" aria-label="Prayer views">
+      <button class="tab" role="tab" aria-selected="true">My Prayers</button>
+      <button class="tab" role="tab" aria-selected="false">Public Requests</button>
+      <button class="tab" role="tab" aria-selected="false">Answered</button>
+    </div>
+    <div class="item-list" style="margin-top:var(--space-4);">
+      <div class="card list-item is-unread">
+        <div class="list-item__avatar">C</div>
+        <div class="list-item__body">
+          <p class="list-item__title">Healing for my mother</p>
+          <p class="list-item__meta">Personal · Praying for 6 days</p>
+          <p class="list-item__text">Lord, I lift my mother's health into Your hands. Grant the doctors wisdom and her body strength.</p>
+        </div>
+      </div>
+      <div class="card list-item">
+        <div class="list-item__avatar">C</div>
+        <div class="list-item__body">
+          <p class="list-item__title">Wisdom for a career decision</p>
+          <p class="list-item__meta">Personal · Praying for 2 days</p>
+          <p class="list-item__text">Father, show me clearly which path honors You.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <aside style="display:flex;flex-direction:column;gap:var(--space-5);">
+    <div class="card card-pad" style="text-align:center;">
+      <p class="eyebrow">Prayer Timer</p>
+      <p style="font-family:var(--font-display);font-size:var(--text-3xl);margin:var(--space-3) 0;">05:00</p>
+      <button type="button" class="btn btn-primary" style="width:100%;">Start Praying</button>
+    </div>
+
+    <div class="card card-pad">
+      <p class="eyebrow">Prayer Groups</p>
+      <div class="item-list" style="margin-top:var(--space-3);">
+        <div class="list-item" style="padding:var(--space-2) 0;">
+          <div class="list-item__avatar" style="width:32px;height:32px;font-size:var(--text-xs);">F</div>
+          <div class="list-item__body"><p class="list-item__title">Family</p><p class="list-item__meta">4 members</p></div>
+        </div>
+        <div class="list-item" style="padding:var(--space-2) 0;">
+          <div class="list-item__avatar" style="width:32px;height:32px;font-size:var(--text-xs);">C</div>
+          <div class="list-item__body"><p class="list-item__title">Church</p><p class="list-item__meta">28 members</p></div>
+        </div>
+      </div>
+      <a href="prayer-journal.html" class="btn btn-ghost" style="width:100%;margin-top:var(--space-4);">Open Prayer Journal</a>
+    </div>
+  </aside>
+</div>
+
+    </div>
+  </main>
+</div>
+
+<script src="js/nav.js"></script>
+
+</body>
+</html>

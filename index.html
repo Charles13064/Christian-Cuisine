@@ -42,8 +42,21 @@
 <!-- Theme script loaded synchronously & first, to set data-theme
      before first paint and prevent a flash of the wrong theme. -->
 <script src="Frontend/js/theme.js"></script>
-</head>
+
+<!-- Progress bar-->
+<link rel="stylesheet" href="Frontend/css/progress-bar.css" />
+
+
+
+</head>  
+<div class="progress-wrapper">
+    <div class="glass-container">
+        <div class="progress-bar" id="scrollBar"></div>
+    </div>
+</div>
 <body data-page="landing">
+
+
 
 <a href="#main" class="skip-link">Skip to content</a>
 
@@ -268,5 +281,8 @@
 
 <script src="Frontend/js/nav.js"></script>
 <script src="Frontend/js/landing.js"></script>
+
+<!-- Progress Bar-->
+ <script src="Frontend/JS/prgress-bar.js"></script>
 </body>
 </html>

@@ -141,8 +141,14 @@
         <h3>Confirmation</h3>
         <p class="muted">Review the information below. Check the box to agree to the Terms of Service and Privacy Policy before creating your account.</p>
         <div id="reviewSummary" class="review-summary" aria-live="polite"></div>
-        <label class="checkbox-row" style="margin:var(--space-4) 0;">
-          <input type="checkbox" id="agreeCheck" /> I agree to the <a href="terms.html" class="link">Terms of Service</a> and <a href="privacy.html" class="link">Privacy Policy</a>
+        <label class="checkbox-row" style="margin:var(--space-4) 0; align-items:flex-start;">
+          <input type="checkbox" id="agreeCheck" />
+            <div style="display:flex; flex-wrap:wrap; gap:0.25rem;">
+              <span>I agree to the</span>
+              <button type="button" class="modal-trigger button-link" data-modal="privacyModal">Terms of Service</button>
+              <span>and</span>
+              <button type="button" class="modal-trigger button-link" data-modal="orthodoxyModal">Statement of Orthodoxy</button>
+            </div>
         </label>
 
         <div class="form-actions">
@@ -155,6 +161,24 @@
     </form>
   </div>
 </main>
+
+<div class="modal-backdrop" id="modalBackdrop" hidden></div>
+<div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle" hidden>
+  <div class="modal-content">
+    <button type="button" class="modal-close" aria-label="Close">×</button>
+    <h2 id="privacyModalTitle">Privacy Policy</h2>
+    <p>Your privacy is important to us. We collect only the information necessary to provide, personalize, and improve your experience. Your email address and profile data are used to create your account and support secure access.</p>
+    <p>We do not share your personal details with third parties without your consent, except as required by law or to operate essential services. You can always update your preferences in account settings.</p>
+  </div>
+</div>
+<div class="modal" id="orthodoxyModal" role="dialog" aria-modal="true" aria-labelledby="orthodoxyModalTitle" hidden>
+  <div class="modal-content">
+    <button type="button" class="modal-close" aria-label="Close">×</button>
+    <h2 id="orthodoxyModalTitle">Statement of Orthodoxy</h2>
+    <p>I believe in God, the Father almighty, Creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried; he descended to the dead; on the third day he rose again from the dead; he ascended into heaven, and is seated at the right hand of God the Father almighty; from there he will come to judge the living and the dead.</p>
+    <p>I believe in the Holy Spirit, the holy catholic (universal) Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.</p>
+  </div>
+</div>
 
 <script src="Frontend/js/nav.js"></script>
 <script src="Frontend/js/register.js"></script>

@@ -145,6 +145,41 @@ function initRegister() {
     finalSubmit.disabled = !agreeCheck.checked;
   });
 
+  // Modal open/close behavior
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalTriggers = Array.from(document.querySelectorAll('.modal-trigger'));
+  const modalCloses = Array.from(document.querySelectorAll('.modal-close'));
+  const modals = Array.from(document.querySelectorAll('.modal'));
+
+  function closeModal() {
+    modals.forEach(modal => {
+      modal.hidden = true;
+      modal.classList.remove('show');
+    });
+    if (modalBackdrop) modalBackdrop.classList.remove('show');
+  }
+
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.hidden = false;
+    modal.classList.add('show');
+    if (modalBackdrop) modalBackdrop.classList.add('show');
+  }
+
+  modalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const target = trigger.dataset.modal;
+      openModal(target);
+    });
+  });
+
+  modalCloses.forEach(button => button.addEventListener('click', closeModal));
+  if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeModal();
+  });
+
   // Handle final submit: simple client-side validation demo
   form.addEventListener('submit', (e) => {
     e.preventDefault();

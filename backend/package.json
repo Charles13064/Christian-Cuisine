@@ -1,0 +1,23 @@
+{
+  "name": "xstian-causine",
+  "version": "1.0.0",
+  "description": "**\"Feeding Your Soul Daily\"** — vanilla HTML/CSS/JS, no frameworks or libraries.",
+  "homepage": "https://github.com/Charles13064/Christian-Cuisine#readme",
+  "bugs": {
+    "url": "https://github.com/Charles13064/Christian-Cuisine/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Charles13064/Christian-Cuisine.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
